@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sro.coolsummer.rest.RestMapper">
+	<select id="getAllRest" resultType="com.sro.coolsummer.rest.Rest">
+		select * from restplace where chk1_yn is not null and chk2_yn is not null and chk3_yn is not null order by r_seq_no
+	</select>
+	<select id="getRestplace" parameterType="com.sro.coolsummer.rest.Rest" resultType="com.sro.coolsummer.rest.Rest">
+		select * from restplace where (equp_type = #{equp_type}
+								and r_detl_add like '%'||#{r_detl_add}||'%'
+								and use_prnb >= #{use_prnb}
+								and chk1_yn like '%'||#{chk1_yn, jdbcType=VARCHAR}||'%'
+								and chk2_yn like '%'||#{chk2_yn, jdbcType=VARCHAR}||'%'
+								and chk3_yn like '%'||#{chk3_yn, jdbcType=VARCHAR}||'%'
+								) order by r_seq_no
+	</select>
+</mapper>
