@@ -4,7 +4,7 @@
 
 <Tools>
 OS - Windows
-플랫폼 - Spring
+Framework - Spring
 언어 - Java, Javascript, python, JSP
 특징
 1. Kakao Map API로 지도 구현
